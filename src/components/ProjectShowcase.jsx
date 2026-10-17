@@ -192,6 +192,12 @@ export default function ProjectShowcase() {
     });
 
     mm.add('(max-width: 768px)', () => {
+      // Set explicit initial states on mobile to ensure strict sequence
+      gsap.set(titleStageRef.current, { autoAlpha: 0, scale: 0.85, filter: 'blur(16px)', pointerEvents: 'none' });
+      gsap.set(subStageRef.current, { autoAlpha: 0, scale: 0.88, filter: 'blur(16px)', y: 35, pointerEvents: 'none' });
+      gsap.set(showcaseStageRef.current, { autoAlpha: 0, scale: 0.82, y: 50, filter: 'blur(20px)', pointerEvents: 'none' });
+      if (trackRef.current) gsap.set(trackRef.current, { x: '0%' });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -201,14 +207,20 @@ export default function ProjectShowcase() {
         },
       });
 
-      tl.to(titleStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.12 }, 0.02);
-      tl.to(titleStageRef.current, { autoAlpha: 0, scale: 1.25, filter: 'blur(20px)', duration: 0.10 }, 0.20);
-      tl.to(subStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.12 }, 0.35);
-      tl.to(subStageRef.current, { autoAlpha: 0, scale: 0.9, filter: 'blur(20px)', duration: 0.10 }, 0.53);
-      tl.to(showcaseStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', pointerEvents: 'auto', duration: 0.10 }, 0.68);
+      // 1. Judul IN -> HOLD -> OUT (0.00 -> 0.32)
+      tl.to(titleStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.14, ease: 'power2.out' }, 0.02);
+      tl.to(titleStageRef.current, { autoAlpha: 0, scale: 1.25, filter: 'blur(20px)', duration: 0.12, ease: 'power2.in' }, 0.20);
 
+      // 2. Sub-Judul IN -> HOLD -> OUT (0.36 -> 0.64)
+      tl.to(subStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', duration: 0.14, ease: 'power2.out' }, 0.36);
+      tl.to(subStageRef.current, { autoAlpha: 0, scale: 0.9, filter: 'blur(20px)', y: -30, duration: 0.12, ease: 'power2.in' }, 0.52);
+
+      // 3. Showcase Grand Transition IN (0.68 -> 0.78)
+      tl.to(showcaseStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', pointerEvents: 'auto', duration: 0.10, ease: 'power2.out' }, 0.68);
+
+      // 4. Horizontal Scrubbing Across Projects (0.80 -> 1.00)
       if (trackRef.current) {
-        tl.to(trackRef.current, { x: '-82%', duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(trackRef.current, { x: '-82%', duration: 0.20, ease: 'none' }, 0.80);
       }
     });
 

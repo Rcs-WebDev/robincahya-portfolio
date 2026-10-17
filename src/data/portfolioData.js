@@ -4,7 +4,7 @@ export const PORTFOLIO_DATA = {
   title: "Award-Winning UI/UX & Web Designer",
   coordinates: "7° 58' 54.4'' S 112° 37' 48.2'' E",
   statusTag: "DISCIPLINE ISN'T A MOOD / IT'S A DECISION",
-  email: "robincahyasur@gmail.com",
+  email: "rcsuryanto@gmail.com",
 
   whatIDo: [
     "Web Developer",
@@ -31,13 +31,12 @@ export const PORTFOLIO_DATA = {
   ],
 
   manifestoDescription:
-    "Sun Hung is an Award-winning UI/UX and web designer based in Saigon, Vietnam, creating immersive digital experiences and high-impact web architectures for ambitious global brands and fast-scaling startups.",
+    "Web Developer and Digital Creator with a strong 10+ year background in manufacturing Quality Assurance. My decade in QA trained me to look closely at details, find the root cause of problems, and work systematically—habits I now bring into writing clean code and designing visual media. I build practical web and mobile applications (such as short-form video clipping tools, Point-of-Sale systems, e-commerce storefronts, and WhatsApp automation engines) using JavaScript, Vue.js, React, and Dart. On the creative side, I produce animated AI video stories for YouTube and design custom automotive posters in Adobe Photoshop.",
 
   stats: [
-    { value: "08+", label: "YEARS OF EXPERIENCE", detail: "Specialized in UI/UX & Interactive Design" },
-    { value: "200+", label: "PROJECTS DELIVERED", detail: "Fintech, SaaS, AI, Web3 & E-Commerce" },
-    { value: "100+", label: "HAPPY CLIENTS", detail: "Global Agencies & Direct Enterprises" },
-    { value: "15+", label: "DESIGN AWARDS", detail: "Awwwards, CSSDA, FWA Recognitions" }
+    { value: "02+", label: "YEARS OF EXPERIENCE", detail: "Specialized in UI/UX & Interactive Design" },
+    { value: "10+", label: "PROJECTS DELIVERED", detail: "Fintech, SaaS, AI, Web3 & E-Commerce" },
+    { value: "30+", label: "HAPPY CLIENTS", detail: "Global Agencies & Direct Enterprises" },
   ],
 
   featuredProjects: [
@@ -46,7 +45,7 @@ export const PORTFOLIO_DATA = {
       title: "YTShortClipper",
       subtitle: "Video Clipping Web App",
       category: "WEB APPLICATION / AI & VIDEO AUTOMATION",
-      year: "2024",
+      year: "2026",
       highlight: "AI VIDEO SAAS",
       colorTheme: "#ff003c",
       image: "/images/projects/ytshortclipper.jpg",
@@ -70,7 +69,7 @@ export const PORTFOLIO_DATA = {
       title: "automation-wa-saas",
       subtitle: "WhatsApp SaaS Automation Engine",
       category: "BACKEND SERVICE / NODE.JS AUTOMATION",
-      year: "2024",
+      year: "2026",
       highlight: "ENTERPRISE SAAS",
       colorTheme: "#25D366",
       image: "/images/projects/automation-wa-saas.jpg",
@@ -94,7 +93,7 @@ export const PORTFOLIO_DATA = {
       title: "bien_pos_app",
       subtitle: "Mobile Point of Sale App",
       category: "MOBILE APPLICATION / DART & FLUTTER",
-      year: "2024",
+      year: "2026",
       highlight: "MOBILE POS APP",
       colorTheme: "#ff9900",
       image: "/images/projects/bien_pos_app.jpg",
@@ -118,7 +117,7 @@ export const PORTFOLIO_DATA = {
       title: "vue_pos_app",
       subtitle: "Vue.js Cashier & Inventory Dashboard",
       category: "WEB APPLICATION / VUE.JS DASHBOARD",
-      year: "2024",
+      year: "2026",
       highlight: "VUE.JS DASHBOARD",
       colorTheme: "#42b883",
       image: "/images/projects/vue_pos_app.jpg",
@@ -142,7 +141,7 @@ export const PORTFOLIO_DATA = {
       title: "rcs-ecommerce",
       subtitle: "E-Commerce Web Storefront",
       category: "WEB DEVELOPMENT / JAVASCRIPT COMMERCE",
-      year: "2024",
+      year: "2026",
       highlight: "E-COMMERCE STORE",
       colorTheme: "#00f2fe",
       image: "/images/projects/rcs-ecommerce.jpg",
@@ -183,9 +182,9 @@ export const PORTFOLIO_DATA = {
   ],
 
   socials: [
-    { name: "LINKEDIN", url: "https://linkedin.com", handle: "linkedin.com/in/ROBIN" },
-    { name: "INSTAGRAM", url: "https://instagram.com", handle: "@ROBIN.design" },
-    { name: "DRIBBBLE", url: "https://dribbble.com", handle: "dribbble.com/ROBIN" },
-    { name: "GITHUB", url: "https://github.com", handle: "github.com/ROBIN" }
+    { name: "LINKEDIN", url: "https://www.linkedin.com/in/robin-cahya-s", handle: "linkedin.com/in/ROBIN" },
+    { name: "INSTAGRAM", url: "https://www.instagram.com/rcsgraphicstudio", handle: "@ROBIN.design" },
+    { name: "YOUTUBE", url: "https://www.youtube.com/@twol_77", handle: "youtube.com/ROBIN" },
+    { name: "GITHUB", url: "https://github.com/Rcs-WebDev", handle: "github.com/ROBIN" }
   ]
 }

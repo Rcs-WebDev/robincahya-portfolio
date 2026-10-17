@@ -29,10 +29,10 @@ export default function AboutPage({ onNavigate }) {
         <div className="about-hero-content">
           <span className="section-eyebrow font-mono">● BIOGRAPHY & PRACTICE</span>
           <h1 className="about-giant-headline font-display">
-            SUN HUNG IS A MULTI DISCIPLINARY DESIGNER, HEAD OF DESIGN, AND TEACHER.
+            ROBIN CAHYA IS A MULTI DISCIPLINARY DESIGNER AND WEB DEVELOPER.
           </h1>
           <p className="about-lead-sub font-mono">
-            BASED IN SAIGON, VIETNAM. PASSIONATE ABOUT CREATING IMMERSIVE VISUAL EXPERIENCES. WITH MORE THAN 8 YEARS OF EXPERIENCE IN A VARIETY OF DOMAINS.
+            BASED IN JAKARTA, INDONESIA. PASSIONATE ABOUT CREATING IMMERSIVE VISUAL EXPERIENCES. WITH MORE THAN 8 YEARS OF EXPERIENCE IN A VARIETY OF DOMAINS.
           </p>
         </div>
       </div>
@@ -42,18 +42,20 @@ export default function AboutPage({ onNavigate }) {
         <div className="narrative-grid">
           <div className="narrative-photo-wrap">
             <img src="/images/photo-workshop.jpg" alt="Sun Hung Workshop" className="narrative-img" />
-            <div className="photo-corner-tag font-mono">STUDIO SESSION · 2024</div>
+            <div className="photo-corner-tag font-mono"></div>
           </div>
 
           <div className="narrative-text-wrap">
             <h3 className="narrative-headline font-display">
-              BRIDGING CREATIVE REBELLION WITH ENTERPRISE ARCHITECTURE
+              BRIDGING BOLD INNOVATION WITH STRUCTURED ENTERPRISE STRATEGY.
             </h3>
             <p className="bio-text" style={{ marginBottom: '1.5rem' }}>
-              My work exists at the intersection of bold brutalist editorial aesthetics and meticulous user-centered engineering. Having led design teams and trained hundreds of designers across Southeast Asia, I believe that modern digital products should evoke strong emotion without sacrificing speed or clarity.
-            </p>
-            <p className="bio-text">
-              Every interface I craft is tested for tactile responsiveness, micro-interaction fluidity, and lasting brand resonance.
+              A person who loves traveling and doing sports. I have experience in multiple organization so I have a good
+              teamworking ability. I have outstanding knowledge in general aspects so my high school and worker friends often
+              call me Bin-pedia. I never see failures as a negative thing, I’d rather see it as an opportunity to become a better
+              person. I want to concentrate on being the best that I can be and make people around me happy to have a social
+              connection with me. I’d love to travel around the world, exchanging experiences and knowledge between me and
+              foreigners. I enjoy expanding social connection and having new connections always been a pleasure for me.
             </p>
           </div>
         </div>
@@ -75,28 +77,9 @@ export default function AboutPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* Career Experience Timeline */}
-      <section className="about-experience-section">
-        <span className="section-eyebrow font-mono">● CAREER TRACK RECORD</span>
-        <h2 className="section-heading-big font-display">EXPERIENCE & LEADERSHIP</h2>
-
-        <div className="experience-list">
-          {experiences.map((exp, idx) => (
-            <div key={idx} className="experience-row">
-              <span className="exp-period font-mono">{exp.period}</span>
-              <div className="exp-info">
-                <h4 className="exp-role font-display">{exp.role}</h4>
-                <span className="exp-place font-mono">{exp.place}</span>
-                <p className="exp-desc">{exp.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Bottom Action Bar */}
       <div className="about-bottom-cta">
-        <button 
+        <button
           className="explore-now-btn"
           onClick={() => onNavigate('works')}
         >
@@ -104,7 +87,7 @@ export default function AboutPage({ onNavigate }) {
           <ArrowUpRight size={20} />
         </button>
 
-        <button 
+        <button
           className="explore-now-btn"
           style={{ background: 'transparent', color: '#fff', border: '1px solid var(--border-subtle)' }}
           onClick={() => onNavigate('contact')}

@@ -77,6 +77,11 @@ export default function CarShowcase() {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
+    // Set baseline initial states for all viewports immediately
+    gsap.set(titleStageRef.current, { autoAlpha: 0, scale: 0.85, z: -140, filter: 'blur(20px)', pointerEvents: 'none' });
+    gsap.set(subStageRef.current, { autoAlpha: 0, scale: 0.88, filter: 'blur(18px)', y: 45, pointerEvents: 'none' });
+    gsap.set(parallaxStageRef.current, { autoAlpha: 0, scale: 0.78, y: 80, filter: 'blur(30px)', pointerEvents: 'none' });
+
     mm.add('(min-width: 769px)', () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -192,6 +197,15 @@ export default function CarShowcase() {
     });
 
     mm.add('(max-width: 768px)', () => {
+      // Set explicit initial states on mobile
+      gsap.set(titleStageRef.current, { autoAlpha: 0, scale: 0.85, filter: 'blur(16px)', pointerEvents: 'none' });
+      gsap.set(subStageRef.current, { autoAlpha: 0, scale: 0.88, filter: 'blur(16px)', y: 35, pointerEvents: 'none' });
+      gsap.set(parallaxStageRef.current, { autoAlpha: 0, scale: 0.82, y: 50, filter: 'blur(20px)', pointerEvents: 'none' });
+
+      if (col1Ref.current) gsap.set(col1Ref.current, { y: 60 });
+      if (col2Ref.current) gsap.set(col2Ref.current, { y: -1600 });
+      if (col3Ref.current) gsap.set(col3Ref.current, { y: 80 });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -201,25 +215,26 @@ export default function CarShowcase() {
         },
       });
 
-      // 1. Judul IN -> OUT
-      tl.to(titleStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.12 }, 0.02);
-      tl.to(titleStageRef.current, { autoAlpha: 0, scale: 1.25, filter: 'blur(20px)', duration: 0.10 }, 0.20);
+      // 1. Judul IN -> HOLD -> OUT (0.00 -> 0.32)
+      tl.to(titleStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.14, ease: 'power2.out' }, 0.02);
+      tl.to(titleStageRef.current, { autoAlpha: 0, scale: 1.25, filter: 'blur(20px)', duration: 0.12, ease: 'power2.in' }, 0.20);
 
-      // 2. Sub-Judul IN -> OUT
-      tl.to(subStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.12 }, 0.35);
-      tl.to(subStageRef.current, { autoAlpha: 0, scale: 0.9, filter: 'blur(20px)', duration: 0.10 }, 0.53);
+      // 2. Sub-Judul IN -> HOLD -> OUT (0.36 -> 0.64)
+      tl.to(subStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', duration: 0.14, ease: 'power2.out' }, 0.36);
+      tl.to(subStageRef.current, { autoAlpha: 0, scale: 0.9, filter: 'blur(20px)', y: -30, duration: 0.12, ease: 'power2.in' }, 0.52);
 
-      // 3. Showcase Grand Transition IN from beginning
-      tl.to(parallaxStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', pointerEvents: 'auto', duration: 0.10 }, 0.68);
+      // 3. Showcase Grand Transition IN (0.68 -> 0.78)
+      tl.to(parallaxStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', pointerEvents: 'auto', duration: 0.10, ease: 'power2.out' }, 0.68);
 
+      // 4. Parallax Columns Scrubbing (0.80 -> 1.00)
       if (col1Ref.current) {
-        tl.to(col1Ref.current, { y: -2100, duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(col1Ref.current, { y: -2100, duration: 0.20, ease: 'none' }, 0.80);
       }
       if (col2Ref.current) {
-        tl.to(col2Ref.current, { y: 100, duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(col2Ref.current, { y: 100, duration: 0.20, ease: 'none' }, 0.80);
       }
       if (col3Ref.current) {
-        tl.to(col3Ref.current, { y: -2200, duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(col3Ref.current, { y: -2200, duration: 0.20, ease: 'none' }, 0.80);
       }
     });
 
@@ -237,9 +252,9 @@ export default function CarShowcase() {
     <section ref={containerRef} id="car-showcase" className="pinned-design-container" style={{ height: '700vh' }}>
       {/* Pinned Sticky Stage */}
       <div className="pinned-design-viewport">
-        {/* Background Ambient Glows & Grid */}
-        <div className="design-ambient-glow left-glow" />
-        <div className="design-ambient-glow right-glow" />
+        {/* Neutral Background Ambient Lighting - No red tint to preserve true car poster colors */}
+        <div className="design-ambient-glow" style={{ background: 'rgba(255, 255, 255, 0.02)', opacity: 0.05, top: '15%', left: '-100px' }} />
+        <div className="design-ambient-glow" style={{ background: 'rgba(56, 198, 209, 0.04)', opacity: 0.05, bottom: '10%', right: '-100px' }} />
         <div className="design-grid-lines" />
 
         {/* 35mm Viewfinder HUD Reticles */}
@@ -249,7 +264,7 @@ export default function CarShowcase() {
         <div className="cinema-viewfinder-reticle cinema-reticle-br" />
 
         {/* Anamorphic Optical Flare Light Streak */}
-        <div ref={flareRef} className="cinema-anamorphic-flare" style={{ '--flare-color': '#ff003c' }}>
+        <div ref={flareRef} className="cinema-anamorphic-flare" style={{ '--flare-color': '#00f2fe' }}>
           <div ref={flareCoreRef} className="cinema-flare-core" />
         </div>
 

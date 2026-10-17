@@ -25,7 +25,6 @@ import FooterCTA from './components/FooterCTA';
 // Dedicated Subpages
 import AboutPage from './pages/AboutPage';
 import WorksPage from './pages/WorksPage';
-import ArchivePage from './pages/ArchivePage';
 import ContactPage from './pages/ContactPage';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -250,10 +249,6 @@ export default function App() {
 
         {currentPage === 'works' && (
           <WorksPage />
-        )}
-
-        {currentPage === 'archive' && (
-          <ArchivePage />
         )}
 
         {currentPage === 'contact' && (

@@ -48,9 +48,9 @@ export default function ContactPage() {
         <div className="contact-meta-card">
           <div className="contact-box-item">
             <span className="font-mono label">DIRECT ELECTRONIC MAIL</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
+            <div className="contact-email-row">
               <span className="email-highlight">{PORTFOLIO_DATA.email}</span>
-              <button 
+              <button
                 onClick={handleCopyEmail}
                 className="copy-mini-btn font-mono"
                 title="Copy Email"
@@ -63,7 +63,7 @@ export default function ContactPage() {
 
           <div className="contact-box-item">
             <span className="font-mono label">LOCATION & COORDINATES</span>
-            <p className="meta-val">SAIGON, VIETNAM</p>
+            <p className="meta-val">JAKARTA, INDONESIA</p>
             <p className="font-mono" style={{ color: 'var(--text-dim)', fontSize: '0.8rem', marginTop: '0.2rem' }}>
               {PORTFOLIO_DATA.coordinates}
             </p>
@@ -90,10 +90,10 @@ export default function ContactPage() {
                 TRANSMISSION RECEIVED
               </h3>
               <p className="bio-text">
-                Thank you for reaching out, {formData.name || 'friend'}. Sun Hung will review your brief and respond within 24 hours.
+                Thank you for reaching out, {formData.name || 'friend'}. Robin Cahya will review your brief and respond within 24 hours.
               </p>
-              <button 
-                className="explore-now-btn" 
+              <button
+                className="explore-now-btn"
                 style={{ marginTop: '2rem' }}
                 onClick={() => setIsSubmitted(false)}
               >

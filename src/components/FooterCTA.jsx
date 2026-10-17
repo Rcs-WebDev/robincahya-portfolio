@@ -16,7 +16,6 @@ export default function FooterCTA({ onNavigate }) {
     { id: 'home', label: 'HOMEPAGE', title: 'ROBIN CAHYA STUDIO' },
     { id: 'about', label: 'ABOUT', title: 'ABOUT ROBIN CAHYA' },
     { id: 'works', label: 'WORKS', title: 'SELECTED WORKS' },
-    { id: 'archive', label: 'ARCHIVE', title: 'PROJECT ARCHIVE' },
     { id: 'contact', label: 'CONTACT', title: 'GET IN TOUCH' }
   ];
 

@@ -26,10 +26,9 @@ export default function FullscreenMenu({ isOpen, onClose, isSoundOn, onToggleSou
   if (!isOpen) return null;
 
   const navLinks = [
-    { id: 'home', label: 'HOMEPAGE', title: 'SUN HUNG STUDIO' },
-    { id: 'about', label: 'ABOUT', title: 'ABOUT SUN HUNG' },
+    { id: 'home', label: 'HOMEPAGE', title: 'RCSGRAPHIC STUDIO' },
+    { id: 'about', label: 'ABOUT', title: 'ABOUT ROBIN CAHYA' },
     { id: 'works', label: 'WORKS', title: 'SELECTED WORKS' },
-    { id: 'archive', label: 'ARCHIVE', title: 'PROJECT ARCHIVE' },
     { id: 'contact', label: 'CONTACT', title: 'GET IN TOUCH' }
   ];
 

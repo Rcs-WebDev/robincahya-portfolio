@@ -181,6 +181,11 @@ export default function ParfumeShowcase() {
     });
 
     mm.add('(max-width: 768px)', () => {
+      // Set explicit initial states on mobile to ensure strict sequence
+      gsap.set(titleStageRef.current, { autoAlpha: 0, scale: 0.85, filter: 'blur(16px)', pointerEvents: 'none' });
+      gsap.set(subStageRef.current, { autoAlpha: 0, scale: 0.88, filter: 'blur(16px)', y: 35, pointerEvents: 'none' });
+      gsap.set(cardsStageRef.current, { autoAlpha: 0, scale: 0.82, y: 50, filter: 'blur(20px)', pointerEvents: 'none' });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -190,25 +195,26 @@ export default function ParfumeShowcase() {
         },
       });
 
-      // 1. Judul IN -> OUT
-      tl.to(titleStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.12 }, 0.02);
-      tl.to(titleStageRef.current, { autoAlpha: 0, scale: 1.25, filter: 'blur(20px)', duration: 0.10 }, 0.20);
+      // 1. Judul IN -> HOLD -> OUT (0.00 -> 0.32)
+      tl.to(titleStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.14, ease: 'power2.out' }, 0.02);
+      tl.to(titleStageRef.current, { autoAlpha: 0, scale: 1.25, filter: 'blur(20px)', duration: 0.12, ease: 'power2.in' }, 0.20);
 
-      // 2. Sub-Judul IN -> OUT
-      tl.to(subStageRef.current, { autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 0.12 }, 0.35);
-      tl.to(subStageRef.current, { autoAlpha: 0, scale: 0.9, filter: 'blur(20px)', duration: 0.10 }, 0.53);
+      // 2. Sub-Judul IN -> HOLD -> OUT (0.36 -> 0.64)
+      tl.to(subStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', duration: 0.14, ease: 'power2.out' }, 0.36);
+      tl.to(subStageRef.current, { autoAlpha: 0, scale: 0.9, filter: 'blur(20px)', y: -30, duration: 0.12, ease: 'power2.in' }, 0.52);
 
-      // 3. Showcase Cards Grand Transition IN
-      tl.to(cardsStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', pointerEvents: 'auto', duration: 0.10 }, 0.68);
+      // 3. Showcase Cards Grand Transition IN (0.68 -> 0.78)
+      tl.to(cardsStageRef.current, { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)', pointerEvents: 'auto', duration: 0.10, ease: 'power2.out' }, 0.68);
 
+      // 4. Mobile Scrubbing
       if (card1Ref.current) {
-        tl.to(card1Ref.current, { y: -260, x: 15, rotate: 4, opacity: 0.95, duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(card1Ref.current, { y: -260, x: 15, rotate: 4, opacity: 0.95, duration: 0.20, ease: 'none' }, 0.80);
       }
       if (card2Ref.current) {
-        tl.to(card2Ref.current, { y: -240, x: -15, rotate: -4, opacity: 0.95, duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(card2Ref.current, { y: -240, x: -15, rotate: -4, opacity: 0.95, duration: 0.20, ease: 'none' }, 0.80);
       }
       if (card3Ref.current) {
-        tl.to(card3Ref.current, { y: -220, scale: 1.02, opacity: 0.9, duration: 0.18, ease: 'none' }, 0.82);
+        tl.to(card3Ref.current, { y: -220, scale: 1.02, opacity: 0.9, duration: 0.20, ease: 'none' }, 0.80);
       }
     });
 
