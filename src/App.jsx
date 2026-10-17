@@ -20,7 +20,6 @@ import CarShowcase from './components/CarShowcase';
 import ParfumeShowcase from './components/ParfumeShowcase';
 import ProjectShowcase from './components/ProjectShowcase';
 import StatsAndClients from './components/StatsAndClients';
-import AwardsSection from './components/AwardsSection';
 import FooterCTA from './components/FooterCTA';
 
 // Dedicated Subpages
@@ -242,7 +241,6 @@ export default function App() {
             <ParfumeShowcase />
             <ProjectShowcase />
             <StatsAndClients />
-            <AwardsSection />
           </>
         )}
 
