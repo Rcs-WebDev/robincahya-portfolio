@@ -114,7 +114,7 @@ export default function PinnedManifesto() {
           <div className="photo-card-stripes-frame">
             <img src="/images/photo-workshop.jpg" alt="Teaching UIUX Design Workshop" />
           </div>
-          <span className="photo-caption font-mono">SAIGON WORKSHOP / 2024</span>
+          <span className="photo-caption font-mono"> Robin WEBDEV</span>
         </div>
 
         {/* Floating Parallax Card 2 (Conference Speaker) */}
@@ -122,7 +122,7 @@ export default function PinnedManifesto() {
           <div className="photo-card-stripes-frame">
             <img src="/images/photo-conference.jpg" alt="Keynote Design Speaker" />
           </div>
-          <span className="photo-caption font-mono">GLOBAL KEYNOTE SPEAKER</span>
+          <span className="photo-caption font-mono"> BEST POSTER DESIGN 2  </span>
         </div>
 
         {/* Floating Parallax Card 3 (Right Studio Portrait) */}
@@ -130,7 +130,7 @@ export default function PinnedManifesto() {
           <div className="photo-card-stripes-frame">
             <img src="/images/hero-designer.jpg" alt="Sun Hung Head of Design" />
           </div>
-          <span className="photo-caption font-mono">HEAD OF DESIGN / STUDIO</span>
+          <span className="photo-caption font-mono">RCSGRAPHICSTUDIO</span>
         </div>
 
         {/* Floating Parallax Card 4 (Exhibition Tile) */}
@@ -138,7 +138,7 @@ export default function PinnedManifesto() {
           <div className="photo-card-stripes-frame">
             <img src="/images/eye-on-design.jpg" alt="Exhibition Curation" />
           </div>
-          <span className="photo-caption font-mono">EYE ON DESIGN EXHIBIT</span>
+          <span className="photo-caption font-mono">BEST POSTER DESIGN 1</span>
         </div>
 
         {/* Pinned Colossal Headline */}
