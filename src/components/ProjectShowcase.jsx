@@ -270,15 +270,6 @@ export default function ProjectShowcase() {
             PHASE 1: JUDUL UTAMA CINEMATIC IN -> OUT (CENTERED)
             ========================================================= */}
         <div ref={titleStageRef} className="cinematic-phase-title">
-          <div className="cinema-slate-meta font-mono" style={{ marginBottom: '1.2rem' }}>
-            <span className="meta-live">
-              <span className="cinema-badge-dot" style={{ backgroundColor: '#00f2fe', color: '#00f2fe' }} />
-              <span>REC</span>
-            </span>
-            <span>TC 00:03:45:18</span>
-            <span>·</span>
-            <span>2.39:1 CINEMASCOPE</span>
-          </div>
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#00f2fe', color: '#00f2fe' }} />
@@ -352,31 +343,6 @@ export default function ProjectShowcase() {
             willChange: 'transform, opacity, filter',
           }}
         >
-          {/* Top Cinema HUD metadata bar */}
-          <div
-            style={{
-              width: '100%',
-              padding: '0 8vw',
-              marginBottom: '1.5rem',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              pointerEvents: 'none',
-              zIndex: 10,
-            }}
-          >
-            <div className="cinema-slate-meta font-mono" style={{ margin: 0 }}>
-              <span className="meta-live">
-                <span className="cinema-badge-dot" style={{ backgroundColor: '#00f2fe', color: '#00f2fe' }} />
-                <span>PROJECT SHOWCASE</span>
-              </span>
-              <span>05 FLAGSHIP PRODUCTIONS</span>
-            </div>
-            <div className="font-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.5)' }}>
-              ● SCROLL TO SCRUB TIMELINE · CLICK CARD TO INSPECT
-            </div>
-          </div>
-
           {/* Horizontal Project Track starting from Project 1 */}
           <div
             ref={trackRef}

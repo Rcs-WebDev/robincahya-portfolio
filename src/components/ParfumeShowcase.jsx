@@ -244,19 +244,10 @@ export default function ParfumeShowcase() {
             PHASE 1: JUDUL UTAMA CINEMATIC IN -> OUT (CENTERED)
             ========================================================= */}
         <div ref={titleStageRef} className="cinematic-phase-title">
-          <div className="cinema-slate-meta font-mono" style={{ marginBottom: '1.2rem' }}>
-            <span className="meta-live">
-              <span className="cinema-badge-dot" style={{ backgroundColor: '#ffd700', color: '#ffd700' }} />
-              <span>REC</span>
-            </span>
-            <span>TC 00:02:45:08</span>
-            <span>·</span>
-            <span>2.39:1 ANAMORPHIC</span>
-          </div>
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#ffd700', color: '#ffd700' }} />
-            <span>● 02 / OLFACTORY LAB · HAUTE PARFUMERIE</span>
+            <span>● 02 / PARFUME LAB </span>
           </div>
 
           <div className="cinema-headline-stage">
@@ -288,11 +279,11 @@ export default function ParfumeShowcase() {
           <div className="cinematic-manifesto-card">
             <div className="cinematic-manifesto-badge font-mono" style={{ color: '#ffd700' }}>
               <span className="cinema-badge-dot" style={{ backgroundColor: '#ffd700', color: '#ffd700' }} />
-              <span>HAUTE PARFUMERIE // ACT 02</span>
+              <span>PARFUME SHOWCASE // ACT 02</span>
             </div>
 
             <h3 className="cinematic-manifesto-text font-display">
-              "SCULPTING ESSENCE INTO VISUAL AURA — ARTISANAL BESPOKE FLACONS."
+              "SCULPTING ESSENCE INTO VISUAL AURA."
             </h3>
 
             <div ref={beamRef} className="cinema-beam-divider" style={{ maxWidth: '380px', margin: '1rem auto 0 auto' }}>
@@ -307,31 +298,6 @@ export default function ParfumeShowcase() {
             PHASE 3: SHOWCASE ITSELF TRANSITION IN FROM BEGINNING
             ========================================================= */}
         <div ref={cardsStageRef} style={{ width: '100%', height: '100%', position: 'absolute', inset: 0, pointerEvents: 'auto', willChange: 'transform, opacity, filter' }}>
-          {/* Top Cinema HUD metadata bar */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '2.5rem',
-              left: '8vw',
-              right: '8vw',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              pointerEvents: 'none',
-              zIndex: 10,
-            }}
-          >
-            <div className="cinema-slate-meta font-mono" style={{ margin: 0 }}>
-              <span className="meta-live">
-                <span className="cinema-badge-dot" style={{ backgroundColor: '#ffd700', color: '#ffd700' }} />
-                <span>HAUTE PARFUMERIE</span>
-              </span>
-              <span>05 LUXURY FLACON COMPOSITIONS</span>
-            </div>
-            <div className="font-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.5)' }}>
-              ● SCROLL TO FLOAT · CLICK FLACON TO EXPAND
-            </div>
-          </div>
           {/* Floating Parallax Card 1 (Top-Left) */}
           <div
             ref={card1Ref}

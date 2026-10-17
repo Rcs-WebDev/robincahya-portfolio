@@ -130,19 +130,10 @@ function WorksHeroCinematicIntro() {
             PHASE 1: JUDUL UTAMA (VERTICALLY & HORIZONTALLY CENTERED)
             ========================================================= */}
         <div ref={titleStageRef} className="cinematic-phase-title">
-          <div className="cinema-slate-meta font-mono" style={{ marginBottom: '1.2rem' }}>
-            <span className="meta-live">
-              <span className="cinema-badge-dot" style={{ backgroundColor: '#ff007f', color: '#ff007f' }} />
-              <span>MASTER REEL</span>
-            </span>
-            <span>TC 00:00:01:00</span>
-            <span>·</span>
-            <span>2.39:1 CINEMASCOPE</span>
-          </div>
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#ff007f', color: '#ff007f' }} />
-            <span>● ARCHIVE 2023 — 2026 · MASTER WORKS</span>
+            <span>● WORKS ARCHIVE 2025 — 2026 </span>
           </div>
 
           <div className="cinema-headline-stage">
@@ -163,7 +154,7 @@ function WorksHeroCinematicIntro() {
                 ))}
               </span>
               <span className="cinema-word">
-                {'STUDIES'.split('').map((c, i) => (
+                {'PROJECTS'.split('').map((c, i) => (
                   <span key={i} className="cinema-char">{c}</span>
                 ))}
               </span>

@@ -202,9 +202,10 @@ export default function CarShowcase() {
       gsap.set(subStageRef.current, { autoAlpha: 0, scale: 0.88, filter: 'blur(16px)', y: 35, pointerEvents: 'none' });
       gsap.set(parallaxStageRef.current, { autoAlpha: 0, scale: 0.82, y: 50, filter: 'blur(20px)', pointerEvents: 'none' });
 
-      if (col1Ref.current) gsap.set(col1Ref.current, { y: 60 });
-      if (col2Ref.current) gsap.set(col2Ref.current, { y: -1600 });
-      if (col3Ref.current) gsap.set(col3Ref.current, { y: 80 });
+      // Initial Column Positions on Mobile (All 3 columns start filled with posters, no empty gap)
+      if (col1Ref.current) gsap.set(col1Ref.current, { y: 20 });
+      if (col2Ref.current) gsap.set(col2Ref.current, { y: 50 });
+      if (col3Ref.current) gsap.set(col3Ref.current, { y: 20 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -228,13 +229,13 @@ export default function CarShowcase() {
 
       // 4. Parallax Columns Scrubbing (0.80 -> 1.00)
       if (col1Ref.current) {
-        tl.to(col1Ref.current, { y: -2100, duration: 0.20, ease: 'none' }, 0.80);
+        tl.to(col1Ref.current, { y: -1900, duration: 0.20, ease: 'none' }, 0.80);
       }
       if (col2Ref.current) {
-        tl.to(col2Ref.current, { y: 100, duration: 0.20, ease: 'none' }, 0.80);
+        tl.to(col2Ref.current, { y: -1500, duration: 0.20, ease: 'none' }, 0.80);
       }
       if (col3Ref.current) {
-        tl.to(col3Ref.current, { y: -2200, duration: 0.20, ease: 'none' }, 0.80);
+        tl.to(col3Ref.current, { y: -2000, duration: 0.20, ease: 'none' }, 0.80);
       }
     });
 
@@ -272,15 +273,6 @@ export default function CarShowcase() {
             PHASE 1: JUDUL UTAMA CINEMATIC IN -> OUT (CENTERED)
             ========================================================= */}
         <div ref={titleStageRef} className="cinematic-phase-title">
-          <div className="cinema-slate-meta font-mono" style={{ marginBottom: '1.2rem' }}>
-            <span className="meta-live">
-              <span className="cinema-badge-dot" style={{ backgroundColor: '#ff003c', color: '#ff003c' }} />
-              <span>REC</span>
-            </span>
-            <span>TC 00:01:39:12</span>
-            <span>·</span>
-            <span>16:9 RAW 4K</span>
-          </div>
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#ff003c', color: '#ff003c' }} />
@@ -350,32 +342,6 @@ export default function CarShowcase() {
             willChange: 'transform, opacity, filter',
           }}
         >
-          {/* Top Cinema HUD metadata bar */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '2.5rem',
-              left: '8vw',
-              right: '8vw',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              pointerEvents: 'none',
-              zIndex: 10,
-            }}
-          >
-            <div className="cinema-slate-meta font-mono" style={{ margin: 0 }}>
-              <span className="meta-live">
-                <span className="cinema-badge-dot" style={{ backgroundColor: '#ff003c', color: '#ff003c' }} />
-                <span>AUTOMOTIVE LAB</span>
-              </span>
-              <span>39 HIGH-OCTANE POSTER ARTIFACTS</span>
-            </div>
-            <div className="font-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.5)' }}>
-              ● SCROLL TO DRIFT STREAM · CLICK POSTER TO EXPAND
-            </div>
-          </div>
-
           <div className="design-parallax-stage">
             {/* Column 1 */}
             <div ref={col1Ref} className="design-parallax-col col-1">
