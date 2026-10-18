@@ -84,12 +84,12 @@ export default function VideoIntro({ onComplete }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        boxSizing: 'border-box',
-        padding: isPortrait ? '0 16px' : '0',
+        margin: 0,
+        padding: 0,
       }}
       title="Klik untuk lewati video"
     >
-      {/* Pure Fullscreen Video centered with safe margins on mobile */}
+      {/* 100% Pure Fullscreen Video without cropping side margins on mobile */}
       <video
         ref={videoRef}
         key={videoSrc}
@@ -99,14 +99,11 @@ export default function VideoIntro({ onComplete }) {
         onError={handleVideoError}
         onEnded={onComplete}
         style={{
-          width: isPortrait ? 'calc(100% - 16px)' : '100%',
-          maxWidth: isPortrait ? '520px' : '100%',
+          width: '100%',
           height: '100%',
-          maxHeight: '100vh',
-          objectFit: isPortrait ? 'contain' : fitMode,
+          objectFit: isPortrait ? 'fill' : 'cover',
           objectPosition: 'center center',
           display: 'block',
-          margin: '0 auto',
           pointerEvents: 'none',
         }}
       />
