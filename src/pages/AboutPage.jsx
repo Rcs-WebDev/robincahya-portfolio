@@ -14,7 +14,7 @@ export default function AboutPage({ onNavigate }) {
     { num: '01', title: 'BOLD IDENTITY', desc: 'Rejecting cookie-cutter templates in favor of aggressive, distinctive visual languages that command industry respect.' },
     { num: '02', title: 'PERFORMANCE FIRST', desc: 'High-speed 60fps rendering, physics-based smooth scrolling, and accessible semantic architecture.' },
     { num: '03', title: 'SYSTEMIC RIGOR', desc: 'Building comprehensive design token libraries and reusable React components that scale effortlessly.' },
-    { num: '04', title: 'PEDAGOGY & CRAFT', desc: 'Actively teaching, mentoring, and giving keynote lectures to advance the UI/UX design community in Vietnam and beyond.' }
+    { num: '04', title: 'PEDAGOGY & CRAFT', desc: 'Actively teaching, mentoring, and giving keynote lectures to advance the UI/UX design community in Indonesia and beyond.' }
   ];
 
   return (
@@ -27,9 +27,9 @@ export default function AboutPage({ onNavigate }) {
         </div>
 
         <div className="about-hero-content">
-          <span className="section-eyebrow font-mono">● BIOGRAPHY & PRACTICE</span>
+          <span className="section-eyebrow font-mono">● BIOGRAPHY</span>
           <h1 className="about-giant-headline font-display">
-            ROBIN CAHYA IS A MULTI DISCIPLINARY DESIGNER AND WEB DEVELOPER.
+            ROBIN CAHYA IS A MULTIDISCIPLINARY WEB DEVELOPER AND DESIGNER.
           </h1>
           <p className="about-lead-sub font-mono">
             BASED IN JAKARTA, INDONESIA. PASSIONATE ABOUT CREATING IMMERSIVE VISUAL EXPERIENCES. WITH MORE THAN 8 YEARS OF EXPERIENCE IN A VARIETY OF DOMAINS.
@@ -47,7 +47,7 @@ export default function AboutPage({ onNavigate }) {
 
           <div className="narrative-text-wrap">
             <h3 className="narrative-headline font-display">
-              BRIDGING BOLD INNOVATION WITH STRUCTURED ENTERPRISE STRATEGY.
+              ABOUT ME
             </h3>
             <p className="bio-text" style={{ marginBottom: '1.5rem' }}>
               A person who loves traveling and doing sports. I have experience in multiple organization so I have a good

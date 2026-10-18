@@ -43,10 +43,6 @@ export default function FullscreenMenu({ isOpen, onClose, isSoundOn, onToggleSou
     <div className="fullscreen-menu-overlay" role="dialog" aria-modal="true">
       {/* Overlay Header */}
       <div className="menu-overlay-header">
-        <div className="font-mono">
-          <span style={{ color: 'var(--accent-pink)' }}>●</span> NAVIGATION
-        </div>
-
         <button
           className="menu-close-btn"
           onClick={onClose}

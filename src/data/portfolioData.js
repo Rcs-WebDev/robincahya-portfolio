@@ -2,7 +2,7 @@ export const PORTFOLIO_DATA = {
   name: "ROBIN CAHYA SURYANTO",
   role: "UIUX DESIGNER / WEBSITE DESIGNER",
   title: "Award-Winning UI/UX & Web Designer",
-  coordinates: "7° 58' 54.4'' S 112° 37' 48.2'' E",
+  coordinates: "6° 12′ S, 106° 49′ E",
   statusTag: "DISCIPLINE ISN'T A MOOD / IT'S A DECISION",
   email: "rcsuryanto@gmail.com",
 
@@ -34,7 +34,7 @@ export const PORTFOLIO_DATA = {
     "Web Developer and Digital Creator with a strong 10+ year background in manufacturing Quality Assurance. My decade in QA trained me to look closely at details, find the root cause of problems, and work systematically—habits I now bring into writing clean code and designing visual media. I build practical web and mobile applications (such as short-form video clipping tools, Point-of-Sale systems, e-commerce storefronts, and WhatsApp automation engines) using JavaScript, Vue.js, React, and Dart. On the creative side, I produce animated AI video stories for YouTube and design custom automotive posters in Adobe Photoshop.",
 
   stats: [
-    { value: "02+", label: "YEARS OF EXPERIENCE", detail: "Specialized in UI/UX & Interactive Design" },
+    { value: "02+", label: "YEARS OF EXPERIENCE", detail: "WEB DEVELOPER AND DESIGNER" },
     { value: "10+", label: "PROJECTS DELIVERED", detail: "Fintech, SaaS, AI, Web3 & E-Commerce" },
     { value: "30+", label: "HAPPY CLIENTS", detail: "Global Agencies & Direct Enterprises" },
   ],
@@ -49,8 +49,8 @@ export const PORTFOLIO_DATA = {
       highlight: "AI VIDEO SAAS",
       colorTheme: "#ff003c",
       image: "/images/projects/ytshortclipper.jpg",
-      deviceType: "laptop",
-      deviceLabel: "LAPTOP / WEB APP",
+      deviceType: "mobile",
+      deviceLabel: "SMARTPHONE / MOBILE APP",
       github: "https://github.com/Rcs-WebDev/YTShortClipper",
       githubDisplay: "github.com/Rcs-WebDev/YTShortClipper",
       description: "Built a web application designed to turn long-form videos into ready-to-post vertical clips for YouTube Shorts and Instagram Reels. Developed interactive timeline controls, synchronized caption overlays, and B-roll integration tools to speed up the daily editing workflow.",

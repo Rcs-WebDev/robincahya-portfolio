@@ -34,13 +34,9 @@ export default function ContactPage() {
   return (
     <div className="page-container contact-page-root">
       <div className="contact-page-header">
-        <span className="section-eyebrow font-mono">● INITIATE DIALOGUE</span>
         <h1 className="contact-giant-title font-display">
           START A PROJECT
         </h1>
-        <p className="contact-sub font-mono">
-          CURRENTLY ACCEPTING SELECT COMMISSIONS FOR Q4 2026 & BEYOND.
-        </p>
       </div>
 
       <div className="contact-grid-wrap">
