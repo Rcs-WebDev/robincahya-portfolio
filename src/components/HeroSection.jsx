@@ -5,6 +5,7 @@ import ScrambleText from './ScrambleText';
 import fotoCv from '../assets/robin-cutout.png';
 
 export default function HeroSection({
+  isCinemaRevealing = false,
   isRippling = false,
   startScramble = true,
   returnTrigger = 1,
@@ -40,7 +41,7 @@ export default function HeroSection({
     'Web Developer',
     'Graphic Designer',
     'Analyst',
-    'Frontend Developer',
+    'Fullstack Developer',
     'Automation Engineer',
     'Mobile Developer',
   ];
@@ -71,20 +72,14 @@ export default function HeroSection({
     }
   };
 
+  const isCinemaActive = isCinemaRevealing;
+
   return (
     <section
       id="hero"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`rcs-hero-container ${isRippling ? 'hero-liquid-active' : ''}`}
-      style={
-        isRippling
-          ? {
-            filter: 'url(#hero-liquid-ripple)',
-            willChange: 'filter',
-          }
-          : {}
-      }
+      className={`rcs-hero-container ${isCinemaActive ? 'hero-cinema-reveal' : ''}`}
     >
       {/* Top Header Navigation Strip (Sun Hung Exact Match) */}
       <div className="rcs-hero-top-strip">

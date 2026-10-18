@@ -5,8 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import ThreeCanvas from './components/ThreeCanvas';
 import Navbar from './components/Navbar';
-import IntroPreloader from './components/IntroPreloader';
-import LiquidRippleFilter from './components/LiquidRippleFilter';
+import VideoIntro from './components/VideoIntro';
+import CinemaTransition from './components/CinemaTransition';
 import PageTransition from './components/PageTransition';
 import CustomCursor from './components/CustomCursor';
 import FullscreenMenu from './components/FullscreenMenu';
@@ -30,8 +30,8 @@ import ContactPage from './pages/ContactPage';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
-  // Intro Sequence Stages: 'curtain' -> 'ripple' -> 'scramble' -> 'done'
-  const [introStage, setIntroStage] = useState('curtain');
+  // Intro Sequence Stages: 'video' -> 'cinema' -> 'scramble' -> 'done'
+  const [introStage, setIntroStage] = useState('video');
   const [hasIntroCompleted, setHasIntroCompleted] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -42,32 +42,16 @@ export default function App() {
   const lenisRef = useRef(null);
   const audioCtxRef = useRef(null);
 
-  // Deterministic 3-Step Intro Sequence Orchestration
-  useEffect(() => {
-    if (hasIntroCompleted) return;
+  // Handle Cinema Transition completion -> trigger Homepage Scramble
+  const handleCinemaComplete = () => {
+    setIntroStage('scramble');
 
-    // Step 1: Curtain holds for 1200ms -> triggers Step 2: Ripple at 1300ms
-    const rippleTimer = setTimeout(() => {
-      setIntroStage('ripple');
-    }, 1300);
-
-    // Step 2: Ripple settles after panels reveal -> triggers Step 3: Scramble text decode
-    const scrambleTimer = setTimeout(() => {
-      setIntroStage('scramble');
-    }, 3300);
-
-    // Step 3: Scramble completes -> intro is done
-    const doneTimer = setTimeout(() => {
+    // Allow scramble animation to run on Hero, then mark intro fully done
+    setTimeout(() => {
       setIntroStage('done');
       setHasIntroCompleted(true);
-    }, 5200);
-
-    return () => {
-      clearTimeout(rippleTimer);
-      clearTimeout(scrambleTimer);
-      clearTimeout(doneTimer);
-    };
-  }, [hasIntroCompleted]);
+    }, 2400);
+  };
 
   // Smooth Scroll Setup with Lenis
   useEffect(() => {
@@ -183,22 +167,20 @@ export default function App() {
 
   return (
     <div className="portfolio-app-root">
-      {/* Intro Preloader: Step 1 - Brutalist Gate Curtain */}
-      {!hasIntroCompleted && (
-        <IntroPreloader
+      {/* Step 1: User's Custom Video Intro */}
+      {introStage === 'video' && !hasIntroCompleted && (
+        <VideoIntro
+          videoSrc="/videos/intro.mp4"
           onComplete={() => {
-            setIntroStage('ripple');
-            setHasIntroCompleted(true);
+            setIntroStage('cinema');
           }}
         />
       )}
 
-      {/* SVG Liquid Ripple Filter: Step 2 - Fluid Wave Distortion */}
-      <LiquidRippleFilter
-        isActive={introStage === 'ripple'}
-        onRippleComplete={() => {
-          setIntroStage('scramble');
-        }}
+      {/* Step 2: Cinematic Theater Intro Transition (Replaces Water Ripple) */}
+      <CinemaTransition
+        isActive={introStage === 'cinema'}
+        onCinemaComplete={handleCinemaComplete}
       />
 
       {/* Page Transition Shutter Curtain */}
@@ -229,7 +211,7 @@ export default function App() {
         {currentPage === 'home' && (
           <>
             <HeroSection
-              isRippling={introStage === 'ripple'}
+              isCinemaRevealing={introStage === 'cinema'}
               startScramble={introStage === 'scramble' || introStage === 'done' || hasIntroCompleted}
               returnTrigger={heroReturnCount}
             />

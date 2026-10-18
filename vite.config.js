@@ -15,7 +15,9 @@ export default defineConfig({
       transform(code, id) {
         if (!isVercel && isProd && id.includes('/src/') && (id.endsWith('.js') || id.endsWith('.jsx'))) {
           return {
-            code: code.replace(/(['"])\/images\//g, `$1${repoBase}images/`),
+            code: code
+              .replace(/(['"])\/images\//g, `$1${repoBase}images/`)
+              .replace(/(['"])\/videos\//g, `$1${repoBase}videos/`),
             map: null
           }
         }
@@ -23,8 +25,11 @@ export default defineConfig({
     }
   ],
   server: {
-    port: 5188,
-    strictPort: true,
-    host: true
+    port: 5173,
+    strictPort: false,
+    host: true,
+    watch: {
+      ignored: ['**/public/videos/**']
+    }
   }
 })
