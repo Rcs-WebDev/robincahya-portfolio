@@ -184,7 +184,7 @@ export default function CinemaTransition({
             className="cinema-badge-dot"
             style={{ backgroundColor: '#00f2fe', color: '#00f2fe' }}
           />
-          <span>● PORTFOLIO · ROBIN CAHYA SURYANTO</span>
+          <span> PORTFOLIO </span>
         </div>
 
         <div className="cinema-headline-stage">

@@ -2350,8 +2350,9 @@ body {
 
 .menu-overlay-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  width: 100%;
 }
 
 .menu-close-btn {
@@ -2515,6 +2516,22 @@ body {
   .dot {
     width: 3.5px;
     height: 3.5px;
+  }
+
+  .fullscreen-menu-overlay {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .menu-overlay-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-close-btn {
+    width: 40px;
+    height: 40px;
   }
 
   .hero-container {
