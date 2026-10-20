@@ -67,6 +67,7 @@ export default function App() {
     });
 
     lenisRef.current = lenis;
+    window.__lenis = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -84,6 +85,7 @@ export default function App() {
     return () => {
       cancelAnimationFrame(animFrame);
       lenis.destroy();
+      delete window.__lenis;
     };
   }, []);
 

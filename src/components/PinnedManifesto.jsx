@@ -151,11 +151,6 @@ export default function PinnedManifesto() {
             ))}
           </h2>
 
-          {/* <div className="pinned-sub-badge font-mono">
-            <span>● BASED IN SAIGON, VIETNAM</span>
-            <span>·</span>
-            <span>OVER 8 YEARS EXPERIENCE</span>
-          </div> */}
         </div>
       </div>
     </div>

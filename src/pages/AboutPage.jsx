@@ -50,12 +50,7 @@ export default function AboutPage({ onNavigate }) {
               ABOUT ME
             </h3>
             <p className="bio-text" style={{ marginBottom: '1.5rem' }}>
-              A person who loves traveling and doing sports. I have experience in multiple organization so I have a good
-              teamworking ability. I have outstanding knowledge in general aspects so my high school and worker friends often
-              call me Bin-pedia. I never see failures as a negative thing, I’d rather see it as an opportunity to become a better
-              person. I want to concentrate on being the best that I can be and make people around me happy to have a social
-              connection with me. I’d love to travel around the world, exchanging experiences and knowledge between me and
-              foreigners. I enjoy expanding social connection and having new connections always been a pleasure for me.
+              "I view challenges not as setbacks, but as vital stepping stones for personal growth. My professional philosophy is grounded in resilience and the constant pursuit of becoming the best version of myself. I am driven by a desire to create a positive impact on those around me, fostering an environment of collaboration and mutual support. With a global mindset, I am eager to travel, exchange knowledge across cultures, and build meaningful connections that expand our shared horizons."
             </p>
           </div>
         </div>

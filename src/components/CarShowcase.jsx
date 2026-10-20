@@ -276,7 +276,7 @@ export default function CarShowcase() {
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#ff003c', color: '#ff003c' }} />
-            <span>● 01 / AUTOMOTIVE POSTER LAB · 39 ARTIFACTS</span>
+            <span> 01 / AUTOMOTIVE POSTER LAB · 39 ARTIFACTS</span>
           </div>
 
           <div className="cinema-headline-stage">

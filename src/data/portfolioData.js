@@ -34,7 +34,7 @@ export const PORTFOLIO_DATA = {
     "Web Developer and Digital Creator with a strong 10+ year background in manufacturing Quality Assurance. My decade in QA trained me to look closely at details, find the root cause of problems, and work systematically—habits I now bring into writing clean code and designing visual media. I build practical web and mobile applications (such as short-form video clipping tools, Point-of-Sale systems, e-commerce storefronts, and WhatsApp automation engines) using JavaScript, Vue.js, React, and Dart. On the creative side, I produce animated AI video stories for YouTube and design custom automotive posters in Adobe Photoshop.",
 
   stats: [
-    { value: "02+", label: "YEARS OF EXPERIENCE", detail: "WEB DEVELOPER AND DESIGNER" },
+    { value: "02+", label: "YEARS OF EXPERIENCE", detail: "WEB DEVELOPER AND GRAPHIC  DESIGNER" },
     { value: "10+", label: "PROJECTS DELIVERED", detail: "Fintech, SaaS, AI, Web3 & E-Commerce" },
     { value: "30+", label: "HAPPY CLIENTS", detail: "Global Agencies & Direct Enterprises" },
   ],
@@ -43,16 +43,17 @@ export const PORTFOLIO_DATA = {
     {
       id: "ytshortclipper",
       title: "YTShortClipper",
-      subtitle: "Video Clipping Web App",
+      subtitle: "Video Clipping Mobile App",
       category: "WEB APPLICATION / AI & VIDEO AUTOMATION",
       year: "2026",
-      highlight: "AI VIDEO SAAS",
+      highlight: "CLIP VIDEO SAAS",
       colorTheme: "#ff003c",
       image: "/images/projects/ytshortclipper.jpg",
       deviceType: "mobile",
       deviceLabel: "SMARTPHONE / MOBILE APP",
       github: "https://github.com/Rcs-WebDev/YTShortClipper",
       githubDisplay: "github.com/Rcs-WebDev/YTShortClipper",
+      projectUrl: "https://rcs-webdev.github.io/YTShortClipper/",
       description: "Built a web application designed to turn long-form videos into ready-to-post vertical clips for YouTube Shorts and Instagram Reels. Developed interactive timeline controls, synchronized caption overlays, and B-roll integration tools to speed up the daily editing workflow.",
       deliverables: [
         "Interactive Timeline Controls",
@@ -77,6 +78,7 @@ export const PORTFOLIO_DATA = {
       deviceLabel: "LAPTOP / WEB & BACKEND",
       github: "https://github.com/Rcs-WebDev/automation-wa-saas",
       githubDisplay: "github.com/Rcs-WebDev/automation-wa-saas",
+      projectUrl: "https://rcs-webdev.github.io/automation-wa-saas/",
       description: "Built a Node.js and JavaScript service to automate WhatsApp messaging for business and customer service needs. Set up automatic message triggers, active session management, and error handling so messages are sent reliably without dropping connections.",
       deliverables: [
         "Node.js & JavaScript Automation Core",
@@ -101,6 +103,7 @@ export const PORTFOLIO_DATA = {
       deviceLabel: "SMARTPHONE / MOBILE APP",
       github: "https://github.com/Rcs-WebDev/bien_pos_app",
       githubDisplay: "github.com/Rcs-WebDev/bien_pos_app",
+      projectUrl: "https://rcs-webdev.github.io/bien_pos_app/",
       description: "Developed a mobile cashier application using Dart, designed to help store staff input orders quickly and calculate bills accurately on handheld devices. Created a clean, easy-to-use mobile interface with local cart management for smooth daily transactions.",
       deliverables: [
         "Dart Mobile Architecture",
@@ -115,16 +118,17 @@ export const PORTFOLIO_DATA = {
     {
       id: "vue_pos_app",
       title: "vue_pos_app",
-      subtitle: "Vue.js Cashier & Inventory Dashboard",
-      category: "WEB APPLICATION / VUE.JS DASHBOARD",
+      subtitle: "Vue.js Cashier & Inventory SAAS",
+      category: "WEB APPLICATION / VUE.JS SAAS",
       year: "2026",
-      highlight: "VUE.JS DASHBOARD",
+      highlight: "VUE.JS SAAS",
       colorTheme: "#42b883",
       image: "/images/projects/vue_pos_app.jpg",
       deviceType: "laptop",
-      deviceLabel: "LAPTOP / WEB DASHBOARD",
+      deviceLabel: "LAPTOP / WEB & BACKEND",
       github: "https://github.com/Rcs-WebDev/vue_pos_app",
       githubDisplay: "github.com/Rcs-WebDev/vue_pos_app",
+      projectUrl: "https://rcs-webdev.github.io/vue_pos_app/",
       description: "Built a web-based POS and inventory dashboard using Vue.js, making it easy to track stock levels and manage daily sales in one place.",
       deliverables: [
         "Vue.js Component Architecture",
@@ -139,7 +143,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "rcs-ecommerce",
       title: "rcs-ecommerce",
-      subtitle: "E-Commerce Web Storefront",
+      subtitle: "E-Commerce Web",
       category: "WEB DEVELOPMENT / JAVASCRIPT COMMERCE",
       year: "2026",
       highlight: "E-COMMERCE STORE",
@@ -149,6 +153,7 @@ export const PORTFOLIO_DATA = {
       deviceLabel: "LAPTOP / RESPONSIVE WEB",
       github: "https://github.com/Rcs-WebDev/rcs-ecommerce",
       githubDisplay: "github.com/Rcs-WebDev/rcs-ecommerce",
+      projectUrl: "https://rcs-webdev.github.io/rcs-ecommerce/",
       description: "Created a responsive online store with modern JavaScript, complete with dynamic product catalogs and a working shopping cart system.",
       deliverables: [
         "Modern Vanilla/ES6 JavaScript",

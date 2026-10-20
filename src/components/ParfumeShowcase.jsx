@@ -247,7 +247,7 @@ export default function ParfumeShowcase() {
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#ffd700', color: '#ffd700' }} />
-            <span>● 02 / PARFUME LAB </span>
+            <span> 02 / PARFUME LAB </span>
           </div>
 
           <div className="cinema-headline-stage">

@@ -45,13 +45,29 @@ export default function ProjectShowcase() {
     setActiveProject(project);
     setActiveIdx(idx);
     document.body.style.overflow = 'hidden';
+    if (window.__lenis) {
+      window.__lenis.stop();
+    }
   };
 
   // Close Modal
   const handleCloseModal = () => {
     setActiveProject(null);
     document.body.style.overflow = '';
+    if (window.__lenis) {
+      window.__lenis.start();
+    }
   };
+
+  // Ensure scroll is restored on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+      if (window.__lenis) {
+        window.__lenis.start();
+      }
+    };
+  }, []);
 
   // Modal navigation
   const handlePrevProject = (e) => {
@@ -273,7 +289,7 @@ export default function ProjectShowcase() {
 
           <div className="cinema-act-badge font-mono">
             <span className="cinema-badge-dot" style={{ backgroundColor: '#00f2fe', color: '#00f2fe' }} />
-            <span>● 03 / PROJECT SHOWCASE · 05 CORE PRODUCTIONS</span>
+            <span>03 / PROJECT SHOWCASE · 05 CORE PRODUCTIONS</span>
           </div>
 
           <div className="cinema-headline-stage">
@@ -463,12 +479,18 @@ export default function ProjectShowcase() {
 
       {/* Case Study Modal */}
       {activeProject && (
-        <div className="modal-backdrop" onClick={handleCloseModal}>
+        <div 
+          className="modal-backdrop" 
+          onClick={handleCloseModal}
+          data-lenis-prevent="true"
+        >
           <div
             className="modal-content-card"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
+            data-lenis-prevent="true"
             style={{ maxWidth: '960px' }}
           >
             {/* Modal Controls Header */}
@@ -566,17 +588,17 @@ export default function ProjectShowcase() {
                   </p>
                 </div>
 
-                {/* Direct GitHub Link Button */}
-                {activeProject.github && (
+                {/* Direct Project Live Demo / GitHub.io Link Button */}
+                {(activeProject.projectUrl || activeProject.github) && (
                   <a
-                    href={activeProject.github}
+                    href={activeProject.projectUrl || (activeProject.github ? activeProject.github.replace('https://github.com/Rcs-WebDev/', 'https://rcs-webdev.github.io/') + '/' : '#')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="modal-github-action-btn"
                   >
-                    <GithubIcon size={18} />
-                    <span>VIEW REPOSITORY ON GITHUB</span>
-                    <ExternalLink size={15} />
+                    <ExternalLink size={18} />
+                    <span>VIEW PROJECT</span>
+                    <ArrowUpRight size={16} />
                   </a>
                 )}
 
